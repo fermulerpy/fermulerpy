@@ -243,10 +243,38 @@ def bell_series(n):
         arr.append(bell_number(i))
     return arr
 
+def binomialCoef(n, k):
+    """
+    Return the binomial coefficient nCk i.e., coefficient of x^k in (1+x)^n
+    
+    Parameters
+    ----------
+    n : int
+        denotes n in nCk
+    k : int
+        denotes k in nCk
+    return : int
+        return an integer
+        
+    """
+    if(n<k):
+        raise TypeError(
+            "Value of first argument cannot be smaller than second"
+        )
+    Coef = [[0 for x in range(k+1)] for x in range(n+1)]
+    for i in range(n+1):
+        for j in range(min(i, k)+1):
+            if j == 0 or j == i:
+                Coef[i][j] = 1
+            else:
+                Coef[i][j] = Coef[i-1][j-1] + Coef[i-1][j]
+ 
+    return Coef[n][k]
+
 def nCkModp(n, k, p):  
     """
     Returns nCk % p
-
+    
     Parameters
     ----------
     n : int
@@ -268,3 +296,4 @@ def nCkModp(n, k, p):
         for j in range(min(i, k), 0, -1):  
             Coef[j] = (Coef[j] + Coef[j-1]) % p 
     return Coef[k] 
+
