@@ -1,6 +1,6 @@
 import warnings
 
-import numpy as np
+import math
 
 def ugly_number(n):
     """
@@ -108,5 +108,138 @@ def fibonacci_series(n):
     arr = []
     for i in range(0,n):
         arr.append(fibonacci(i))
+    return arr
+
+def catalan(n):
+    """
+    Returns n'th catalan number
+
+    Parameters
+    ----------
+    n : int
+        represent the position of catalan number starting from zero
+
+    """
+    if(n<0):
+        raise NotImplementedError(
+            "Enter a valid natural number"
+        )
+    if(n==0 or n==1):
+        return 1
+    catalan = [0]*(n+1)
+    catalan[0] = 1
+    catalan[1] = 1
+    for i in range(2,n+1):
+        for j in range(i):
+            catalan[i] += catalan[j]*catalan[i-j-1]
+    return catalan[n]
+
+def catalan_series(n):
+    """
+    Returns first n catalan numbers
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of catalan numbers
+    return : array
+        returns an array of n catalan numbers
+
+    """
+    if(n<1):
+        raise NotImplementedError(
+            "Enter a positive integer"
+        )
+    arr = []
+    for i in range(0,n):
+        arr.append(catalan(i))
+    return arr
+    
+def factorial(n):
+    """
+    Returns the factorial of n
+
+    Parameters
+    ----------
+    n : int
+        denotes the non-negative integer for which factorial value is needed
+    
+    """
+    if(n<0):
+        raise NotImplementedError(
+            "Enter a valid non-negative integer"
+        )
+    
+    if(n==0 or n==1):
+        return 1
+    elif(n==2):
+        return 2
+    return n*factorial(n-1)
+
+def stirling_factorial(n):
+    """
+    Returns the upper and lower bounds of Stirling's approximation of a factorial
+
+    Parameters
+    ----------
+    n : int
+        denotes the positive integer for which factorial needs to be approximated
+    return : array
+        return an array of length 2
+        first element denotes lower bound
+        second element denotes upper bound
+
+    """
+    if(n<0):
+        raise NotImplementedError(
+            "Enter a valid natural number"
+        )
+    arr = []
+    lower = (math.sqrt(2*math.pi))*(math.pow(n,n+0.5))*(math.pow(math.e,-1*n))
+    arr.append(lower)
+    upper = (math.e)*(math.pow(n,n+0.5))*(math.pow(math.e,-1*n))
+    arr.append(upper)
+    return arr
+
+def bell_number(n):
+    """
+    Returns the n'th bell number
+
+    Parameters
+    ----------
+    n : int
+        denotes the number for which bell number needs to be calculated
+    
+    """
+    if(n<0):
+        raise NotImplementedError(
+            "Invalid Input"
+        )
+    bell = [[0 for i in range(n+1)] for j in range(n+1)]
+    bell[0][0] = 1
+    for i in range(1,n+1):
+        bell[i][0] = bell[i-1][i-1]
+        for j in range(1,i+1):
+            bell[i][j] = bell[i-1][j-1] + bell[i][j-1]
+    return bell[n][0]
+
+def bell_series(n):
+    """
+    Returns first n bell numbers
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of bell numbers
+    return : array
+        return an array of integers
+    """
+    if(n<1):
+        raise NotImplementedError(
+            "Invalid Input"
+        )
+    arr = []
+    for i in range(n):
+        arr.append(bell_number(i))
     return arr
 
