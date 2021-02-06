@@ -246,7 +246,7 @@ def bell_series(n):
 def binomialCoef(n, k):
     """
     Return the binomial coefficient nCk i.e., coefficient of x^k in (1+x)^n
-
+    
     Parameters
     ----------
     n : int
@@ -271,4 +271,29 @@ def binomialCoef(n, k):
  
     return Coef[n][k]
 
-print(binomialCoef(10,15))
+def nCkModp(n, k, p):  
+    """
+    Returns nCk % p
+    
+    Parameters
+    ----------
+    n : int
+        denotes n in nCk%p
+    k : int
+        denotes k in nCk%p
+    p : int
+        denotes p in nCk%p
+    return : int
+        return an integer
+
+    """
+    if (k > n- k): 
+        k = n - k    
+    Coef = [0 for i in range(k + 1)] 
+  
+    Coef[0] = 1
+    for i in range(1, n + 1):  
+        for j in range(min(i, k), 0, -1):  
+            Coef[j] = (Coef[j] + Coef[j-1]) % p 
+    return Coef[k] 
+
