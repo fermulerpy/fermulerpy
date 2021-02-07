@@ -4,7 +4,15 @@ from .integers import(
     lcm,
     division_algo_coeff,
     isCoprime,
-    euclidean_algo
+    euclidean_algo,
+)
+
+from .factorization import(
+    isPrime,
+    prime_series,
+    prime,
+    prime_table,
+    SieveOfEratosthenes,
 )
 
 __all__ = [
@@ -14,4 +22,9 @@ __all__ = [
     "division_algo_coeff",
     "isCoprime",
     "euclidean_algo",
+    "isPrime",
+    "prime_series",
+    "prime",
+    "prime_table",
+    "SieveOfEratosthenes",
 ]
