@@ -284,7 +284,7 @@ def nCkModp(n, k, p):
     p : int
         denotes p in nCk%p
     return : int
-        return an integer
+        returns an integer
 
     """
     if (k > n- k): 
@@ -297,3 +297,23 @@ def nCkModp(n, k, p):
             Coef[j] = (Coef[j] + Coef[j-1]) % p 
     return Coef[k] 
 
+#def moser_de_bruijn(n):
+#def moser_de_bruijn_series(n):
+#def golomb(n):
+#def golomb_series(n):
+#def newman_conway(n):
+#def newman_conway_series(n):
+#def newman_prime(n):
+#def newman_prime_series(n):
+#def lobb(n):
+#def lobb_series(n):
+#def eulerian(n):
+#def eulerian_series(n):
+#def delannoy(n):
+#def delannoy_series(n):
+#def entringer(n):
+#def entringer_series(n):
+#def recontres(n):
+#def recontres_series(n):
+#def jacobsthal(n):
+#def jacobsthal_series(n):
