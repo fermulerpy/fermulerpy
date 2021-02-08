@@ -15,6 +15,11 @@ from .factorization import(
     SieveOfEratosthenes,
 )
 
+from .linear_diophantine import(
+    rational_sol,
+    isInteger_sol,
+)
+
 __all__ = [
     "isDivisible",
     "gcd",
@@ -27,4 +32,6 @@ __all__ = [
     "prime",
     "prime_table",
     "SieveOfEratosthenes",
+    "rational_sol",
+    "isInteger_sol",
 ]

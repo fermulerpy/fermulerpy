@@ -4,6 +4,8 @@ import random
 
 import warnings
 
+from fermulerpy.elementary import gcd, isDivisible
+
 def rational_sol(*args):
     """
     Returns rational solutions for linear diophantine equation ax + by = c
@@ -25,7 +27,7 @@ def rational_sol(*args):
         returns one solution in the form of 1-d array [x,y]
     fourth argument given : 2-d array
         returns 2-d array of solutions
-        
+
     """
     if(len(args)==3):
         a = args[0]
@@ -76,3 +78,23 @@ def rational_sol(*args):
         raise NotImplementedError(
             "Invalid Number Of Arguments"
         )
+
+def isInteger_sol(a , b ,c):
+    """
+    Checks if integer solution exist for ax + by = c
+
+    Parameters
+    ----------
+    a : int
+        denotes a in ax + by = c
+    b : int
+        denotes b in ax + by = c
+    c : int
+        denotes c in ax + by = c
+    return : bool
+        return true if integer solution exist otherwise false
+
+    """
+    return isDivisible(gcd(a,b),c)
+
+# def integer_sol(a,b,c)
