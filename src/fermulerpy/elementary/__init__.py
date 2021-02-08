@@ -20,6 +20,10 @@ from .linear_diophantine import(
     isInteger_sol,
 )
 
+from .congruences import (
+    isCongruent,
+    least_residue,
+)
 __all__ = [
     "isDivisible",
     "gcd",
@@ -34,4 +38,6 @@ __all__ = [
     "SieveOfEratosthenes",
     "rational_sol",
     "isInteger_sol",
+    "isCongruent",
+    "least_residue"
 ]
