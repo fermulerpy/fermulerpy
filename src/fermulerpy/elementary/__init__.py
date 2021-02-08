@@ -23,6 +23,7 @@ from .linear_diophantine import(
 from .congruences import (
     isCongruent,
     least_residue,
+    congruence_props,
 )
 __all__ = [
     "isDivisible",
@@ -39,5 +40,6 @@ __all__ = [
     "rational_sol",
     "isInteger_sol",
     "isCongruent",
-    "least_residue"
+    "least_residue",
+    "congruence_props",
 ]

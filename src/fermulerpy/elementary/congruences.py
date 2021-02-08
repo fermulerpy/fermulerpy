@@ -34,3 +34,21 @@ def least_residue(a , m):
     """
     return a%m
 
+def congruence_props():
+    """
+    Prints basic properties of congruencies
+
+    Parameters
+    ----------
+    It takes no input arguments
+    return : Null
+        It just prints out properties of congruences
+
+    """
+    print("Five general properties of congruence : ")
+    print("a ≡ a (mod m)")
+    print("If a ≡ b (mod m), then b ≡ a (mod m)")
+    print("If a ≡ b (mod m) and b ≡ c (mod m), then a ≡ c (mod m)")
+    print("If a ≡ b (mod m) and c ≡ d (mod m), then a + c ≡ b + d (mod m)")
+    print("If a ≡ b (mod m) and c ≡ d (mod m), then ac ≡ bd (mod m)")
+
