@@ -13,6 +13,8 @@ from .factorization import(
     prime,
     prime_table,
     SieveOfEratosthenes,
+    prime_divisors,
+    prime_factorization,
 )
 
 from .linear_diophantine import(
@@ -24,6 +26,17 @@ from .congruences import (
     isCongruent,
     least_residue,
     congruence_props,
+)
+
+from .divisors import(
+    get_divisors,
+    divisor_count,
+    divisor_sum,
+)
+
+from .linear_congruences import(
+    isSol,
+    sol_count,
 )
 __all__ = [
     "isDivisible",
@@ -37,9 +50,16 @@ __all__ = [
     "prime",
     "prime_table",
     "SieveOfEratosthenes",
+    "prime_divisors",
+    "prime_factorization",
     "rational_sol",
     "isInteger_sol",
     "isCongruent",
     "least_residue",
     "congruence_props",
+    "get_divisors",
+    "divisor_count",
+    "divisor_sum",
+    "isSol",
+    "sol_count",
 ]

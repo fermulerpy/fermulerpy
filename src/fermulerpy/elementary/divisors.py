@@ -28,7 +28,7 @@ def get_divisors(n):
     
 def divisor_count(n):
     """
-    Calculates total number of divisors of given natural number
+    Calculates total number of divisors of given natural number i.e., d(n)
     
     Parameters
     ----------
@@ -52,7 +52,7 @@ def divisor_count(n):
 
 def divisor_sum(n):
     """
-    Calculates the sum of all divisors of n
+    Calculates the sum of all divisors of n i.e., σ(n)
     
     Parameters
     ----------
