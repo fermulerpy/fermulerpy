@@ -43,3 +43,43 @@ def sol_count(a , b , m):
     else:
         return gcd(a , m)
 
+def find_sol(a , b , m):
+    """
+    Finds all solutions of equation ax ≡ b (mod m)
+
+    Parameters
+    ----------
+    a : int
+        denotes a in ax ≡ b (mod m)
+    b : int
+        denotes b in ax ≡ b (mod m)
+    m : int
+        denotes m in ax ≡ b (mod m)
+
+    """
+    solutions  = []
+
+    if(isSol(a , b , m) == False):
+        return solutions
+
+    elif(sol_count(a , b , m) == 1):
+        for i in range(1,m):
+            if(((a*i) %m) == (b%m)):
+                solutions.append(i)
+                return solutions
+                
+    else:
+        temp_gcd = gcd(a,m)
+        a = a//temp_gcd
+        b = b//temp_gcd
+        m = m//temp_gcd
+        temp_ans = -1
+        for i in range(1,m):
+            if(((a*i) %m) == (b%m)):
+                temp_ans = i
+                break
+        for i in range(temp_gcd):
+            solutions.append(temp_ans + (i*m))
+        return solutions
+    
+
