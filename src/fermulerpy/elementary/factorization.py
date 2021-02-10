@@ -162,5 +162,90 @@ def SieveOfEratosthenes(*args):
             "Invalid Number Of Arguments"
         )
 
-#def prime_divisors
-#def prime_factorizatio
+def prime_divisors(n): 
+    """
+    Returns all prime divisors of a number
+
+    Parameters
+    ----------
+    n : int
+        denotes the positive integer of which prime divisors needs to be find out
+    return : array
+        returns an array of integers denoting prime divisors of n
+
+    """
+    arr = []  
+    if(n<2):
+        return arr
+
+    while n % 2 == 0: 
+        arr.append(2) 
+        n = n / 2
+
+    for i in range(3,int(math.sqrt(n))+1,2):  
+        while n % i== 0: 
+            arr.append(int(i))
+            n = n / i
+
+    if n > 2: 
+        arr.append(int(n))
+
+    if(len(arr) == 1):
+        return arr
+    else:
+        temp_arr = []
+        temp_arr.append(arr[0])
+        for i in range(1,len(arr)):
+            if(arr[i] != arr[i-1]):
+                temp_arr.append(arr[i])
+        return temp_arr
+
+def findFrequency(A, freq):
+    """
+    It is a helper function
+    """
+    (left, right) = (0, len(A) - 1)
+    while left <= right:
+        if A[left] == A[right]:
+            freq[A[left]] = freq.get(A[left], 0) + (right - left + 1)
+            left = right + 1
+            right = len(A) - 1
+        else:
+            right = (left + right) // 2
+
+def prime_factorization(n):
+    """
+    Calculates unique prime factorization of given positive integer
+
+    Parameters
+    ----------
+    n : int
+        denotes the positive integer of which prime factorization needs to be calculated
+    return : dictionary
+        returns a dictionary in which key represent prime divisor and value represent its power
+
+    """
+    if(n<1):
+        raise ValueError(
+            "n must be a positive integer"
+        )
+    arr = []  
+    if(n<2):
+        return arr
+
+    while n % 2 == 0: 
+        arr.append(2) 
+        n = n / 2
+
+    for i in range(3,int(math.sqrt(n))+1,2):  
+        while n % i== 0: 
+            arr.append(int(i))
+            n = n / i
+
+    if n > 2: 
+        arr.append(int(n))
+    count = {}
+    findFrequency(arr, count)
+    return count
+    
+
