@@ -37,6 +37,7 @@ from .divisors import(
 from .linear_congruences import(
     isSol,
     sol_count,
+    find_sol,
 )
 __all__ = [
     "isDivisible",
@@ -62,4 +63,5 @@ __all__ = [
     "divisor_sum",
     "isSol",
     "sol_count",
+    "find_sol",
 ]
