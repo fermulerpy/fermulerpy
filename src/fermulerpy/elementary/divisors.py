@@ -1,56 +1,76 @@
 import math
-import warnings
-n=int(input("ENTER A NUMBER: "))
 
-"""
-    Finding all the divisors of a number
-    function argument: input number n (natural number) 
-    return : list(list of divisors of user given number)
-"""
+import warnings
+
 def get_divisors(n):
+    """
+    Finds all  divisors of a number
+    
+    Parameters
+    ----------
+    n : int
+        denotes the natural number of which divisors needs to be calculated
+    return : array
+        returns an array of divisors of n
+        
+    """
     if(n<=0):
         raise ValueError(
-            "n must be a positive number"
+            "n must be a positive integer"
         )
-    list1=[]
+        
+    list1 = []
+    
     for i in range(1,n+1):
-        if(n%i==0):
+        if(n%i == 0):
             list1.append(i)
     return list1
     
-    
-"""
-    Finding total number of divisors of user given number
-    function argument: input number n (natural number) 
-    return : int (number of divisors)
-"""
 def divisor_count(n):
+    """
+    Calculates total number of divisors of given natural number
+    
+    Parameters
+    ----------
+    n : int
+        denotes the natural number of which divisor count needs to be calculated
+    return : int 
+        returns an integer specifying number of divisors
+        
+    """
     if(n<=0):
         raise ValueError(
-            "n must be a positive number"
+            "n must be a natural number"
         )
     
     count=0
+    
     for i in range(1,n+1):
-        if(n%i==0):
-            count+=1
+        if(n%i == 0):
+            count += 1
     return count
 
-
-"""
-    Finding sum of all divisors of user given number
-    function argument: input number n (natural number) 
-    return : int (sum of all divisors)
-"""
 def divisor_sum(n):
+    """
+    Calculates the sum of all divisors of n
+    
+    Parameters
+    ----------
+    n : int
+        denotes the natural number of which sum of divisors needs to be calculated
+    return : int
+        returns an integer specifying sum of divisors of n
+        
+    """
     if(n<=0):
         raise ValueError(
-            "n must be a positive number"
+            "n must be a positive integer"
         )
     
-    sum1=0
+    sum = 0
+    
     for i in range(1,n+1):
-        if(n%i==0):
-            sum1+=i
-    return sum1
+        if(n%i == 0):
+            sum += i
+    return sum
     
