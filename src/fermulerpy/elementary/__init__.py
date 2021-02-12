@@ -39,6 +39,17 @@ from .linear_congruences import(
     sol_count,
     find_sol,
 )
+
+from .fermat_and_wilson import(
+    fermat_prime_checker,
+    wilson_prime_checker,
+    last_digit,
+)
+
+from .euler import(
+    euler_function,
+)
+
 __all__ = [
     "isDivisible",
     "gcd",
@@ -64,4 +75,8 @@ __all__ = [
     "isSol",
     "sol_count",
     "find_sol",
+    "fermat_prime_checker",
+    "wilson_prime_checker",
+    "last_digit",
+    "euler_function",
 ]

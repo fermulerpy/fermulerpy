@@ -6,4 +6,4 @@ fermulerpy
 Python for Number Theory
 
 """
-__version__ = "0.1.v4"
+__version__ = "0.1.v6"

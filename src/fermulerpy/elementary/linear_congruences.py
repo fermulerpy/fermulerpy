@@ -55,6 +55,8 @@ def find_sol(a , b , m):
         denotes b in ax ≡ b (mod m)
     m : int
         denotes m in ax ≡ b (mod m)
+    return : array
+        returns an array of integers denoting solutions of ax ≡ b (mod m)
 
     """
     solutions  = []
