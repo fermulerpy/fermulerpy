@@ -11,7 +11,6 @@ from .useful_series import(
     bell_series,
     binomialCoef,
     nCkModp,
-
 )
 
 __all__ = [
