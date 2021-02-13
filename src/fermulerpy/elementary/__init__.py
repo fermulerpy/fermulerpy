@@ -48,6 +48,11 @@ from .fermat_and_wilson import(
 
 from .euler import(
     euler_function,
+    classes,
+)
+
+from .primitive import(
+    order,
 )
 
 __all__ = [
@@ -79,4 +84,6 @@ __all__ = [
     "wilson_prime_checker",
     "last_digit",
     "euler_function",
+    "classes",
+    "order",
 ]
