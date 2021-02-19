@@ -28,20 +28,6 @@ def order(a , m):
         i = i + 1
     return i
   
-def primitive_root(n):
-    phi_n = euler_function(n)
-    prime_factors_phi_n = prime_divisors(phi_n)
-    root_arr = []
-    for i in range(1,n+1):
-        a = -1
-        for j in prime_factors_phi_n:
-            j = int(j)
-            if((math.pow(i,phi_n//j) % n) == 1 ):
-                a = 1
-                break
-        if(a == -1):
-            root_arr.append(i)
-    return root_arr
 
-print(primitive_root(11))
+        
     
