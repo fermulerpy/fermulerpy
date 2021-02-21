@@ -1,6 +1,6 @@
 import math
 
-from fermulerpy.constants import (catalan , factorial)
+from fermulerpy.constants import (catalan , factorial , binomialCoef)
 
 def hook_number(n , h_alpha = []):
     """
@@ -58,5 +58,127 @@ def macmahon(a , b , c):
             for k in range(1,c+1):
                 ans *= (i+j+k-1)/(i+j+k-2)
     return ans
+
+def dehn_sommerville(k , d):
+    """
+    Return coefficients of Dehn-Sommerville equations.
+    Dehn-Sommerville equation is represented as : f(k−1) = ∑(i=k to i=d) C(i) * f(i−1), where C(i) represent coefficients.
+
+    Parameters
+    ----------
+    k : int
+        represent k in Dehn-Sommerville equation
+    d : int
+        denotes number of dimensions
+    return  : dictionary
+        key represent f(i-1)
+        value denotes its coefficient
+
+    """
+    if(d < k):
+        raise ValueError(
+            "d cannot be smaller than k"
+        )
+    coeff = {}
+    for i in range(k,d+1):
+        coeff[i-1] = int((math.pow(-1 , d-i)) * binomialCoef(i , k))
+    return coeff
+
+def vershik_kerov_logan_shepp(n):
+    """
+    Returns asymptotic value of ℓn for large n.
+    For a permutation σ∈Sn, let ℓ(σ) denote the maximal length of an increasing subsequence in σ. 
+    Define ℓn = (1/n!) * ∑(σ∈Sn) ℓ(σ),
+    the average value of ℓ(σ) for a σ chosen uniformly at random from Sn.
+
+    Parameters
+    ----------
+    n : int
+        denotes n in vershik equation as stated above
+    return : float
+        returns float number denoting asymptotic value of ℓn.
+
+    """
+    if(n != int(n)):
+        raise ValueError(
+            "n must be integer"
+        )
+    
+    return 2 * math.sqrt(n)
+
+def matrix_tree(n , eigenvalue_array):
+    """
+    Returns number of spanning trees of graph G.
+    G is a graph of size n, let λ1≥…≥λn-1 be the eigenvalues of its Laplacian matrix.
+
+    Parameters
+    ----------
+    n : int
+        size of graph G
+    eigenvalue_array : array
+        array of integers having (n-1) eigenvalues of laplacian matrix of graph G.
+
+    """
+    if(len(eigenvalue_array) != n-1):
+        raise ValueError(
+            "number of eienvalues must be n-1"
+        )
+    
+    if(n != int(n)):
+        raise ValueError(
+            "n must be positive intger"
+        )
+    
+    ans = 1
+    for i in range(len(eigenvalue_array)):
+        ans *= eigenvalue_array[i]
+    
+    if(ans%n != 0):
+        raise ValueError(
+            "Wrong eigenvalues"
+        )
+
+    return int(ans/n)
+
+def ramanujan_hardy_asymptotic(n):
+    """
+    Returns the value of Ramanujan-Hardy asymptotic formula for the number of partitions p(n) of n (for large n).
+
+    Parameters
+    ----------
+    n : int 
+        denotes positive integer
+    return : int
+        returns an integer denoting asymptotic value of p(n)
+
+    """
+    if(n != int(n)):
+        raise ValueError(
+            "n must be integer"
+        )
+    
+    return int((1/(4*n*math.sqrt(3)))*math.exp(math.sqrt(2*n/3)))
+
+def lovasz(n , k):
+    """
+    Returns chromatic number value for Kneser Graph.
+    Kneser graph is the graph on k-subsets of {1,…,n} with two subsets made adjacent when they are disjoint.
+
+    Parameters
+    ----------
+    n : int
+        denotes n in universal set {1,2,3,....n}
+    k : int
+        denotes number of subsets
+    return : int
+        returns integer value denotic chromatic number
+
+    """
+    if(n!=int(n) or k!=int(k)):
+        raise ValueError(
+            "n and k must be integer"
+        )
+    
+    return n - (2*k) + 2
 
 
