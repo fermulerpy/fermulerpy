@@ -181,4 +181,40 @@ def lovasz(n , k):
     
     return n - (2*k) + 2
 
+def waerden_permanent_bound(n):
+    """
+    Returns lower bound for a doubly stochastic matrix A of size n×n.
+    A square matrix with non-negative entries is said to be doubly stochastic if every row and every column sums up to 1.
+
+    Parameters
+    ----------
+    n : int
+        denotes nxn doubly stochastic matrix
+    return : float
+        returns lower bound for the permanent of the matrix
+
+    """
+    if(n!=int(n) or n<1):
+        raise ValueError(
+            "n must be positive integer"
+        )
+    return factorial(n)/math.pow(n,n)
+
+def tutte(n):
+    """
+    Returns the number of rooted planar maps with n edges.
+
+    Parameters:
+    n : int
+        denotes number of edges
+    return : int
+        returns an integer denoting number of rooted planar maps
+
+    """
+    if(n!=int(n) or n<1):
+        raise ValueError(
+            "n must be positive integer"
+        )
+    catalan_val = catalan(n)
+    return int((2*(math.pow(3,n))*catalan_val)/(n+3))
 
