@@ -1,59 +1,80 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+from datetime import datetime
 
-# -- Path setup --------------------------------------------------------------
+import alabaster
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-import os
-import sys
-sys.path.insert(0, os.path.abspath('..'))
+project = "FermulerPy"
+year = datetime.now().year
+copyright = "%d FermulerPy Development Team" % year
 
+version = "v1"
+release = "v1.dev0"
+highlight_language = "python"
+pygments_style = "sphinx"
+autoclass_content = "both"
 
-# -- Project information -----------------------------------------------------
-
-project = 'fermulerpy'
-copyright = '2021, Shikhar'
-author = 'Shikhar'
-
-# The full version, including alpha/beta/rc tags
-release = 'v1'
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+}
 
 
-# -- General configuration ---------------------------------------------------
+def setup(app):
+    app.add_js_file('https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js')
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
+autodoc_member_order = "bysource"
+
+html_theme_options = {
+    "badge_branch": "master",
+    "codecov_button": True,
+    "description": "Number Theory in Python",
+    "body_text_align": "left",
+    "github_user": "fermulerpy",
+    "github_repo": "fermulerpy",
+    "show_relbars": True,
+    "show_powered_by": False,
+    "page_width": "80%",
+    "github_banner": True,
+}
+
+add_function_parentheses = True
+
+add_module_names = True
+
+needs_sphinx = "3.03"
 extensions = [
-    'sphinx.ext.napoleon',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.coverage',
+    "alabaster",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.todo",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.intersphinx",
+    "nbsphinx",
+    "IPython.sphinxext.ipython_console_highlighting",
+    "sphinx.ext.mathjax", 
+    "sphinx.ext.graphviz",  
+    "sphinx.ext.viewcode",  
 ]
+templates_path = ["_templates"]
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+source_suffix = ".rst"
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+master_doc = "index"
 
+html_theme = "alabaster"
 
-# -- Options for HTML output -------------------------------------------------
+html_theme_path = [alabaster.get_path()]
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = 'sphinx_rtd_theme'
+html_title = "FermulerPy"
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
+
+htmlhelp_basename = "fermulerpydoc"
+
+html_sidebars = {
+    "**": [
+        "about.html",
+        "navigation.html",
+        "relations.html",
+        "searchbox.html",
+        "donate.html",
+    ]
+}
