@@ -2,7 +2,7 @@
 
 
 
-:Name: FernulerPy
+:Name: FermulerPy
 :Version: under development
 
 
