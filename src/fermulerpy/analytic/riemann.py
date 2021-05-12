@@ -20,10 +20,6 @@ def zeta_function(s,a = 1,derivative = 0):
         returns tha value of zeta function or its derivative
 
     """
-    if(derivative != int(derivative) or derivative <1):
-        raise ValueError(
-            " derivative must be positive integer"
-        ) 
     return mp.zeta(s,a,derivative)
 
 def altzeta_function(s):
@@ -40,3 +36,30 @@ def altzeta_function(s):
     """
     return mp.altzeta(s)
 
+def gamma_function(s):
+    """
+    Returns tha value for gamma function at s
+
+    Parameters
+    ----------
+    s : int, float, complex
+        denotes the value for which gamma function needs to be calculated
+    return : float, complex
+        returns the value for gamma function
+
+    """
+    return mp.gamma(s)
+
+def bernoulli_num(n):
+    """
+    Returns n'th bernoulli number
+
+    Parameters
+    ----------
+    n : int
+        positive integer value
+    return : float
+        returns bernoulli number
+
+    """
+    return mp.bernoulli(n)
