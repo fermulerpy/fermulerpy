@@ -1,5 +1,6 @@
 import math
 import warnings
+import mpmath as mp
 
 from fermulerpy.elementary import (gcd, isPrime)
 
@@ -58,3 +59,26 @@ def prime_count_AP(n,a,d):
         x = x + d
     return count
 
+def dirichlet_function(s,chi,derivative = 0):
+    """
+    Returns tha value of Dirichlet L-function
+
+    Parameters
+    ----------
+    s : int, float, complex
+        denotes the value for which dirichlet function needs to be calculated
+    chi : array
+        array of dirichlet characters having integer, floating or complex values
+    derivative : int
+        denotes n'th derivative of dirichlet function
+        default value is 0
+    return : float, complex
+        returns the value of dirichlet function or its derivative
+
+    """
+    if(derivative!=int(derivative)):
+        raise ValueError(
+            "derivative must be integer"
+        )
+    return mp.dirichlet(s,chi,derivative)
+    
