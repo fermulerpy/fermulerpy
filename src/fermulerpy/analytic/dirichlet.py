@@ -81,4 +81,3 @@ def dirichlet_function(s,chi,derivative = 0):
             "derivative must be integer"
         )
     return mp.dirichlet(s,chi,derivative)
-    
