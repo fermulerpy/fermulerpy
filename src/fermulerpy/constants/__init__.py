@@ -11,7 +11,6 @@ from .useful_series import(
     bell_series,
     binomialCoef,
     nCkModp,
-    accuracy,
 )
 
 __all__ = [
@@ -27,5 +26,4 @@ __all__ = [
     "bell_series",
     "binomialCoef",
     "nCkModp",
-    "accuracy",
 ]
