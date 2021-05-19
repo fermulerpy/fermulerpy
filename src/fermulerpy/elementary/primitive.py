@@ -28,6 +28,50 @@ def order(a , m):
         i = i + 1
     return i
   
+def primitive_root(p):
+    """
+    Returns the smallest primitive root of positive integer p
+
+    Parameters
+    ----------
+    p : int
+        denotes positive integer
+    return : int
+        returns integer primitive root if exist otherwise returns -1
+        
+    """
+    if(p<1 or p!=int(p)):
+        raise ValueError(
+            "n must be positive integer"
+        )
+    fact = []
+    phi = euler_function(p)
+    n = phi
+    i = 2
+    while(i*i <= n):
+        if(n%i == 0):
+            fact.append(i)
+            while(n%i == 0):
+                n /= i
+        i = i + 1
+    if(n > 1):
+        fact.append(n)
+    res = 2
+    while(res<=p):
+        ok = True
+        size = len(fact)
+        i = 0
+        while(i<size and ok):
+            r = pow(res, int(phi / fact[i]), p)
+            ok &= (r != 1)
+            i = i+1
+        if(ok):
+            return res
+        res = res + 1
+    return -1
+
+
+    
 
         
     
