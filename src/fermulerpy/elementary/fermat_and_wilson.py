@@ -93,4 +93,4 @@ def Modulo(a, b) :
     for i in range(0, len(b)) : 
         mod = (mod * 10 + (int)(b[i])) % a 
     return mod 
-
+    
