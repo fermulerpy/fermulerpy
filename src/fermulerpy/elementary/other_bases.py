@@ -69,3 +69,4 @@ def val(c):
     else:
         return ord(c) - ord('A') + 10
 
+ 
