@@ -40,3 +40,4 @@ def test_prime_factorization1():
 
 def test_prime_factorization2():
     assert prime_factorization(120) == {2:3, 3:1, 5:1}
+
