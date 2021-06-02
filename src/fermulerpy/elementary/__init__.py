@@ -34,6 +34,12 @@ from .divisors import(
     divisor_sum,
 )
 
+from .perfect_numbers import(
+    isPerfect,
+    generate_euclid_perfect,
+    isAmicable,
+)
+
 from .linear_congruences import(
     isSol,
     sol_count,
@@ -53,6 +59,31 @@ from .euler import(
 
 from .primitive import(
     order,
+    primitive_root,
+)
+
+from .decimals import(
+    isTerminate,
+    getPeriod,
+)
+
+from .other_bases import(
+    deci_to_base,
+    base_to_deci,
+)
+
+from .pythagorean_triangles import(
+    is_pythagorean_triplet,
+    generate_pythagorean_triplet,
+)
+
+from .quadratic_congruence import(
+    quad_congruence_solve,
+)
+
+from .sum_2_squares import(
+    isSum_2_square,
+    sum_2_square,
 )
 
 __all__ = [
@@ -86,4 +117,17 @@ __all__ = [
     "euler_function",
     "classes",
     "order",
+    "primitive_root",
+    "isTerminate",
+    "getPeriod",
+    "deci_to_base",
+    "base_to_deci",
+    "is_pythagorean_triplet",
+    "generate_pythagorean_triplet",
+    "quad_congruence_solve",
+    "isSum_2_square",
+    "sum_2_square",
+    "isPerfect",
+    "generate_euclid_perfect",
+    "isAmicable",
 ]
