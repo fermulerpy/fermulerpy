@@ -13,3 +13,6 @@ def test_classes1():
 
 def test_classes2():
     assert classes(15) == {1: [1, 2, 4, 7, 8, 11, 13, 14], 3: [3, 6, 9, 12], 5: [5, 10], 15: [15]}
+
+
+    
