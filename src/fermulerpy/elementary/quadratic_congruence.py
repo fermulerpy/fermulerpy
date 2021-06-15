@@ -33,5 +33,6 @@ def quad_congruence_solve(a,p):
     s1 = int(math.sqrt(a))
     sol.append(s1)
     sol.append(p-s1)
+    sol = sorted(sol)
     return sol
 
