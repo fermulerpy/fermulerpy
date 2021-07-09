@@ -35,7 +35,7 @@ please open an issue in the `issue tracker`_.
 Contributing
 ============
 
-EinsteinPy is a community project, hence all contributions are more than
+FermulerPy is a community project, hence all contributions are more than
 welcome! For more information, head to `CONTRIBUTING.rst`_.
 
 .. _`CONTRIBUTING.rst`: https://github.com/fermulerpy/fermulerpy/blob/master/CONTRIBUTING.rst
