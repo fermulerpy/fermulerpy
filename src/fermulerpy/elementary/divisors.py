@@ -20,11 +20,14 @@ def get_divisors(n):
         )
         
     list1 = []
-    
-    for i in range(1,n+1):
+    list2 = []
+    for i in range(1,int(math.sqrt(n))+1):
         if(n%i == 0):
+            if(i*i == n):
+                list1.append(i)
             list1.append(i)
-    return list1
+            list2.append(n//i)
+    return list1 + list2[::-1]
     
 def divisor_count(n):
     """
@@ -45,9 +48,12 @@ def divisor_count(n):
     
     count=0
     
-    for i in range(1,n+1):
+    for i in range(1,int(math.sqrt(n))+1):
         if(n%i == 0):
-            count += 1
+            if(i*i == n):
+                count += 1
+                continue
+            count += 2
     return count
 
 def divisor_sum(n):
@@ -69,8 +75,12 @@ def divisor_sum(n):
     
     sum = 0
     
-    for i in range(1,n+1):
+    for i in range(1,int(math.sqrt(n))+1):
         if(n%i == 0):
+            if(i*i == n):
+                sum += i
+                continue
             sum += i
+            sum += (n//i)
     return sum
     
