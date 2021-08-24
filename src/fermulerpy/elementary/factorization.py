@@ -180,15 +180,15 @@ def prime_divisors(n):
 
     while n % 2 == 0: 
         arr.append(2) 
-        n = n / 2
+        n = n // 2
 
     for i in range(3,int(math.sqrt(n))+1,2):  
         while n % i== 0: 
-            arr.append(int(i))
-            n = n / i
+            arr.append(i)
+            n = n // i
 
     if n > 2: 
-        arr.append(int(n))
+        arr.append(n)
 
     if(len(arr) == 1):
         return arr
@@ -235,15 +235,15 @@ def prime_factorization(n):
 
     while n % 2 == 0: 
         arr.append(2) 
-        n = n / 2
+        n = n // 2
 
     for i in range(3,int(math.sqrt(n))+1,2):  
         while n % i== 0: 
-            arr.append(int(i))
-            n = n / i
+            arr.append(i)
+            n = n // i
 
     if n > 2: 
-        arr.append(int(n))
+        arr.append(n)
     count = {}
     findFrequency(arr, count)
     return count
