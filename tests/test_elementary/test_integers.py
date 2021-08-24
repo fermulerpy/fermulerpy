@@ -25,7 +25,7 @@ def test_gcd2():
 def test_lcm1():
     a = 2
     b = 100
-    assert lcm(a,b) == 100
+    assert lcm(a,b) == 100 and lcm(500,100) == 500
 
 def test_lcm2():
     a = 343

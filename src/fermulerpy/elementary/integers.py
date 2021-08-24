@@ -38,7 +38,7 @@ def gcd(a,b):
     """
     return math.gcd(a,b)
 
-def lcm(a,b):
+def lcm(num1,num2):
     """
     Calculates least common multiple of a and b
 
@@ -52,8 +52,8 @@ def lcm(a,b):
         returns integer lcm value
     
     """
-    product = a*b
-    return product // gcd(a,b)
+    product = num1*num2
+    return product // gcd(num1,num2)
 
 def division_algo_coeff(a,b):
     """
