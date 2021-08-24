@@ -52,7 +52,8 @@ def lcm(a,b):
         returns integer lcm value
     
     """
-    return int((a*b)/(gcd(a,b)))
+    product = a*b
+    return product // gcd(a,b)
 
 def division_algo_coeff(a,b):
     """
@@ -118,6 +119,4 @@ def euclidean_algo(a,b):
         a=b
         b=temp%b
     print(a ,"=",int(a/b),"*",b)
-
-  
 

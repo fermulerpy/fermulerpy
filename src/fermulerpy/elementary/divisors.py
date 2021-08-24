@@ -84,3 +84,21 @@ def divisor_sum(n):
             sum += (n//i)
     return sum
     
+def divisor_product(n):
+    """
+    Calculates the product of the divisors of positive integer n
+
+    Parameters
+    ----------
+    n : int
+        denotes positive integer
+    return : int
+        returns an integer denoting product of all divisors of n
+
+    """
+    if(n<=0 or n!=int(n)):
+        raise ValueError(
+            "n must be psotive integer"
+        )
+    divisors_count = divisor_count(n)
+    return int(n ** (divisors_count/2))
