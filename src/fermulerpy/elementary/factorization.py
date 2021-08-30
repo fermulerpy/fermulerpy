@@ -77,7 +77,28 @@ def prime(n):
     return : int
         returns an integer
     """
-    return (prime_series(n))[-1]
+    if(n < 0 or int(n)!=n):
+        raise ValueError(
+            "Input must be a non-negative integer"
+        )
+
+    count = n
+    if(count <= 10000 or count > 1000000):
+        i=0
+        j=2
+        nThPrime = 2
+        while(i!=count):
+            if(isPrime(j)):
+                nThPrime = j
+                j = j + 1
+                i = i + 1
+            else:
+                j = j + 1
+
+        return nThPrime
+    else:
+        arr = SieveOfEratosthenes(15485863)
+        return arr[count-1]
     
 def prime_table(count):
     """
@@ -247,4 +268,3 @@ def prime_factorization(n):
     count = {}
     findFrequency(arr, count)
     return count
-
