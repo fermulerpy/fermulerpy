@@ -51,19 +51,21 @@ def prime_series(count):
         raise ValueError(
             "Input must be a non-negative integer"
         )
-
-    arr_prime = []
-    i=0
-    j=2
-
-    while(i!=count):
-        if(isPrime(j)):
-            arr_prime.append(j)
+    if(count <= 5):
+        arr_prime = []
+        i = 0
+        j = 2
+        while(i < count):
+            if(isPrime(j)):
+                arr_prime.append(j)
+                i = i + 1
             j = j + 1
-            i = i + 1
-        else:
-            j = j + 1
-
+        return arr_prime
+    n = count
+    upper = n*(math.log(n*math.log(n)))
+    upper = math.floor(upper)
+    arr = SieveOfEratosthenes(upper)
+    arr_prime = arr[0:count]
     return arr_prime
 
 def prime(n):
@@ -83,7 +85,7 @@ def prime(n):
         )
 
     count = n
-    if(count <= 10000 or count > 1000000):
+    if(count <= 10000):
         i=0
         j=2
         nThPrime = 2
@@ -97,9 +99,11 @@ def prime(n):
 
         return nThPrime
     else:
-        arr = SieveOfEratosthenes(15485863)
+        upper = n*(math.log(n*math.log(n)))
+        upper = math.floor(upper)
+        arr = SieveOfEratosthenes(upper)
         return arr[count-1]
-    
+
 def prime_table(count):
     """
     Returns an array of numbers of prime-table
@@ -253,6 +257,9 @@ def prime_factorization(n):
     arr = []  
     if(n<2):
         return arr
+
+    if(isPrime(n)):
+        return {n:1}
 
     while n % 2 == 0: 
         arr.append(2) 
