@@ -32,6 +32,7 @@ from .divisors import(
     get_divisors,
     divisor_count,
     divisor_sum,
+    divisor_product,
 )
 
 from .perfect_numbers import(
@@ -108,6 +109,7 @@ __all__ = [
     "get_divisors",
     "divisor_count",
     "divisor_sum",
+    "divisor_product",
     "isSol",
     "sol_count",
     "find_sol",
