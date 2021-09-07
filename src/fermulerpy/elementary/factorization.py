@@ -25,6 +25,20 @@ def isPrime(num):
         return True
     if(num%2 == 0 or num%3==0):
         return False
+    x = num + 1
+    if(x and (not(x & (x - 1)))): #Lucas-Lehmer Test
+        p = 0
+        c = 0
+        while(x>=1):
+            x /= 2
+            c = c + 1
+        p = c-1
+        checkNumber = x
+        nextval = 4 % checkNumber
+        for i in range(1, p - 1):
+            nextval = (nextval * nextval - 2) % checkNumber
+        if (nextval == 0): return True
+        else: return False
 
     i = 5
 
@@ -83,26 +97,14 @@ def prime(n):
         raise ValueError(
             "Input must be a non-negative integer"
         )
-
+    arr1 = [2,3,5,7,11,13]
     count = n
-    if(count <= 10000):
-        i=0
-        j=2
-        nThPrime = 2
-        while(i!=count):
-            if(isPrime(j)):
-                nThPrime = j
-                j = j + 1
-                i = i + 1
-            else:
-                j = j + 1
-
-        return nThPrime
-    else:
-        upper = n*(math.log(n*math.log(n)))
-        upper = math.floor(upper)
-        arr = SieveOfEratosthenes(upper)
-        return arr[count-1]
+    if(count <= 6):
+        return arr1[count-1]
+    upper = n*(math.log(n*math.log(n)))
+    upper = math.floor(upper)
+    arr = SieveOfEratosthenes(upper)
+    return arr[count-1]
 
 def prime_table(count):
     """
