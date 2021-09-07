@@ -25,6 +25,20 @@ def isPrime(num):
         return True
     if(num%2 == 0 or num%3==0):
         return False
+    x = num + 1
+    if(x and (not(x & (x - 1)))): #Lucas-Lehmer Test
+        p = 0
+        c = 0
+        while(x>=1):
+            x /= 2
+            c = c + 1
+        p = c-1
+        checkNumber = x
+        nextval = 4 % checkNumber
+        for i in range(1, p - 1):
+            nextval = (nextval * nextval - 2) % checkNumber
+        if (nextval == 0): return True
+        else: return False
 
     i = 5
 
