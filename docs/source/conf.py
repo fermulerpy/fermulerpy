@@ -33,6 +33,7 @@ html_theme_options = {
     "show_powered_by": False,
     "page_width": "80%",
     "github_banner": True,
+    "github_button": True,
 }
 
 add_function_parentheses = True
