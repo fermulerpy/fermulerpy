@@ -26,6 +26,8 @@ def generate_euclid_perfect(k):
     Return the perfect number generated from euclid's theorm
     If 2^k - 1 is prime, then (2^k)((2^k)-1) is perfect
 
+    Parameters
+    ----------
     k : int
         denotes power of 2 in 2^k -1
     return : int
@@ -47,6 +49,8 @@ def isAmicable(n , m):
     """
     Returns true if given pair m and n are amicable
 
+    Parameters
+    ----------
     n : int
         denotes positive integer
     m : int
