@@ -7,6 +7,9 @@ Welcome to fermulerpy's documentation!
 ======================================
 
 
+.. image:: https://github.com/fermulerpy/LOGO/blob/master/logo0.png
+
+
 **FermulerPy** is an attempt to perform number theory computations and visualize various functions through plots in python. This open
 source package covers elementary number theory, analytic number theory, combinatorics, diophantine, probabilistic number theory methods,
 and most importantly their visualization. The project attempts to implement most optimal algorithms related to different number theory
