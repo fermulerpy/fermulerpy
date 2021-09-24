@@ -1,6 +1,7 @@
 import math
-
 import warnings
+
+from fermulerpy.utils import APRtest
 
 def isPrime(num):
     """
@@ -40,14 +41,7 @@ def isPrime(num):
         if (nextval == 0): return True
         else: return False
 
-    i = 5
-
-    while(i*i <= num):
-        if(num%i == 0 or num%(i+2) == 0 ):
-            return False
-        i = i + 6
-
-    return True
+    return APRtest(num)
 
 def prime_series(count):
     """
