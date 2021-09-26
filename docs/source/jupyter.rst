@@ -6,3 +6,4 @@ Jupyter notebooks
    :caption: elementary
    
    /notebooks/Computations With Prime Numbers.ipynb
+   /notebooks/Computations With Divisors.ipynb
