@@ -18,6 +18,63 @@ View `source code`_ of FermulerPy!
 .. _`source code`: https://github.com/fermulerpy/fermulerpy
 
 
+Modules covered under FermulerPy:
+
+* Elementary Number Theory
+ 
+ * Congruences
+ * Decimals
+ * Divisors
+ * Euler
+ * Factorization
+ * Fermat and wilson
+ * Integers
+ * Linear Congruences
+ * Linear Diophantine
+ * Other Bases
+ * Perfect Numbers
+ * Primitive Roots
+ * Pythagorean Triangles
+ * Quadratic Congruences
+ * Sum of two squares
+
+* Analytic Number Theory
+
+ * Arithmetic Fundamentals
+ * Arithmetic Periodicity
+ * Arithmetic functions
+ * Dirichlet
+ * Function Averages
+ * Partitions
+ * Prime distribution
+ * Quadratic residues
+ * Riemann
+
+* Combinatorics
+
+ * Basic (related to  permutations and combinations)
+ * Advanced (covering macmohan, hook, lovasz, etc.)
+
+* Visualization (Main core module of fermulerpy)
+ * Elementary number theory
+ * Analytic number theory
+
+* Constants
+ * Useful series (fibonacci, catalan, bell, lobb, etc.)
+
+* Probabilistic
+ * To be decided
+
+Applications of fermulerpy:
+
+* Most optimized functions for Number Theory computations for e.g., using fermulerpy you can check if the number is prime or not in less
+  than 0.2 ms for numbers as large as having 200 digits.
+* Contain extensive functions for every field of Number Theory
+* This package is very easy to use and has been designed in such a way that even a non-programmer person can use it. (See sample jupyter
+  notebooks)
+* Visualizing elliptical curves, patterns of divisor funstions, zeta function polar curves, etc is possible in few lines of code with 
+  fermulerpy.
+
 
 Contents
 --------
