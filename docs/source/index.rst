@@ -77,11 +77,6 @@ Contents
 .. toctree::
     :maxdepth: 2
 
-    background_and_motivation
-    literature_review
-    results
-    plan_of_work
-    conclusion
     getting_started
     user_guide
     jupyter

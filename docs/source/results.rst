@@ -1,4 +1,0 @@
-Simulation results and Discussion
-=================================
-
-
