@@ -13,11 +13,6 @@ and most importantly their visualization. The project attempts to implement most
 functions. Apart from this, the package covers some basic and useful mathematical functions (in constant module) that may assist you in 
 performing number theory computations. It is released under the MIT licence.
 
-View `source code`_ of FermulerPy!
-
-.. _`source code`: https://github.com/fermulerpy/fermulerpy
-
-
 Modules covered under FermulerPy:
 
 * Elementary Number Theory
@@ -82,6 +77,11 @@ Contents
 .. toctree::
     :maxdepth: 2
 
+    background_and_motivation
+    literature_review
+    results
+    plan_of_work
+    conclusion
     getting_started
     user_guide
     jupyter
