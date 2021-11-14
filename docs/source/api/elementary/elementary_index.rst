@@ -14,3 +14,10 @@ This module contains functions for assisting computations related to elementary 
     quadratic_congruence
     decimals
     perfect_numbers
+    linear_diophantine
+    other_bases
+    euler
+    feramt_and_wilson
+    pythagorean_triangles
+    sum_2_squares
+    primitive
