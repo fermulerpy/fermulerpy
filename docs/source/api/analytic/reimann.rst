@@ -3,6 +3,6 @@ Reimann
 
 Under development.
 
-.. automodule:: fermulerpy.analytic.reimann
+.. automodule:: fermulerpy.analytic.riemann
     :members:
     :show-inheritance:
