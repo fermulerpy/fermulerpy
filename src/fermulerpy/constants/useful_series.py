@@ -297,10 +297,108 @@ def nCkModp(n, k, p):
             Coef[j] = (Coef[j] + Coef[j-1]) % p 
     return Coef[k] 
 
-#def moser_de_bruijn(n):
-#def moser_de_bruijn_series(n):
-#def golomb(n):
-#def golomb_series(n):
+def moser_de_bruijn(n):
+    """
+       Retruns nth element of moser_de_bruijn series
+       taking 0 on 0th element 1 as first element and 4 as second element and so on
+
+
+       n : int
+            denotes n the nth element in moser_de_bruijn series
+            !!! n must be positive integer !!!
+    
+    returns: int
+            the nth element of series
+       """
+    
+    if n >= 0 and type(n) == int: #checking if is positive integer or not
+        if n == 0: 
+            return 0
+        elif n == 1:
+            return 1
+        elif n%2 == 0: #this statement turn even bits on strating form right and starting from 0
+            return 4 * moser_de_bruijn(n//2)
+        elif n % 2 == 1:
+            return 4 * moser_de_bruijn(n//2) +1
+    else:
+        raise NotImplementedError(
+            "Enter a valid non-negative integer"
+            )    
+
+
+def moser_de_bruijn_series(n):
+    """
+    Retruns list up to (n)th element of moser_de_bruijn series
+    taking 0 on 0th element 1 as first element and 4 as second element and so on
+
+
+    n : int
+        denotes n the nth element in moser_de_bruijn series
+        !!! n must be positive integer !!!
+
+    returns: int
+            the nth element of series
+    """
+
+    """ making generator to save time as if i go on appending in empty list after some interger i need to create 
+        new list and copy same element form previous list this is prcedure of dynamic list and python list 
+        is dynamic list : you can read about it on internet """
+
+
+    def gen(n): 
+        for i in range(n+1):
+            yield moser_de_bruijn(i)
+    
+    series = gen(n)
+
+    arr = [val for val in series]
+    return arr
+
+def golomb(n):
+    """
+    Retruns (n)th element of golomb series
+    taking  1 as first element and 2 as second element and also 2 as third so on
+
+
+    n : int
+        denotes n the nth element in golomb
+        !!! n must be positive integer !!!
+
+    returns: int
+            the nth element of series
+    """
+    if n == 1:
+        return 1
+    else:
+        return 1 + golomb(n - golomb(golomb(n-1)))
+
+
+def golomb_series(n):
+    """
+    Retruns list of 1 to (n)th element of golomb series
+    taking  1 as first element and 2 as second element and also 2 as third so on
+
+
+    n : int
+        denotes n the nth element in golomb
+        !!! n must be positive integer !!!
+
+    returns: int
+            the nth element of series
+    """
+
+    """ making generator to save time as if i go on appending in empty list after some interger i need to create 
+        new list and copy same element form previous list this is prcedure of dynamic list and python list 
+        is dynamic list : you can read about it on internet """
+
+    def gen(n):
+        for i in range(1,n+1):
+            yield golomb(i)
+    
+    series = gen(n)
+    
+    arr = [x for x in series]
+    return arr
 #def newman_conway(n):
 #def newman_conway_series(n):
 #def newman_prime(n):
