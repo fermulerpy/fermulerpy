@@ -14,7 +14,7 @@ def ugly_number(n):
     
     """
     if(n<1):
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a valid natural number"
         )
     ugly = [0]*n 
@@ -55,7 +55,7 @@ def ugly_series(n):
     
     """
     if(n<1):
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a valid natural number"
         )
     arr = []
@@ -76,7 +76,7 @@ def fibonacci(n):
     a = 0
     b = 1
     if n < 0:
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a non-negative integer"
         )
     elif n == 0:
@@ -102,7 +102,7 @@ def fibonacci_series(n):
         return an array of length n
     """
     if(n<1):
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a valid input"
         )
     arr = []
@@ -121,7 +121,7 @@ def catalan(n):
 
     """
     if(n<0):
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a valid natural number"
         )
     if(n==0 or n==1):
@@ -147,7 +147,7 @@ def catalan_series(n):
 
     """
     if(n<1):
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a positive integer"
         )
     arr = []
@@ -166,7 +166,7 @@ def factorial(n):
     
     """
     if(n<0):
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a valid non-negative integer"
         )
     
@@ -191,7 +191,7 @@ def stirling_factorial(n):
 
     """
     if(n<0):
-        raise NotImplementedError(
+        raise ValueError(
             "Enter a valid natural number"
         )
     arr = []
@@ -212,7 +212,7 @@ def bell_number(n):
     
     """
     if(n<0):
-        raise NotImplementedError(
+        raise ValueError(
             "Invalid Input"
         )
     bell = [[0 for i in range(n+1)] for j in range(n+1)]
@@ -235,7 +235,7 @@ def bell_series(n):
         return an array of integers
     """
     if(n<1):
-        raise NotImplementedError(
+        raise ValueError(
             "Invalid Input"
         )
     arr = []
