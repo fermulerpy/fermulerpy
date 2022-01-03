@@ -2,4 +2,4 @@ sphinx==3.03
 sphinx_rtd_theme==0.4.3
 ipykernel
 nbsphinx
-pytest==6.2.5
+pytest==3.5.1
