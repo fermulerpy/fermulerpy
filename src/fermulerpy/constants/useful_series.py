@@ -297,21 +297,176 @@ def nCkModp(n, k, p):
             Coef[j] = (Coef[j] + Coef[j-1]) % p 
     return Coef[k] 
 
-#def moser_de_bruijn(n):
-#def moser_de_bruijn_series(n):
-#def golomb(n):
-#def golomb_series(n):
-#def newman_conway(n):
-#def newman_conway_series(n):
+def moser_de_bruijn(n):
+    """
+    Return the n'th moser_de_bruijn.
+    Moser_de_bruijin are numbers whose adding up the distinct powers of the number 4 """
+ 
+    if n < 0:
+        raise NotImplementedError(
+            "Enter a non-negative number"
+        )
+    if n == 0:
+        return 0
+ 
+    elif n ==1:
+        return 1
+ 
+    elif n % 2 ==0:
+        return 4 * moser_de_bruijn(n // 2)
+ 
+    elif n % 2 == 1:
+        return 4 * moser_de_bruijn(n // 2) +1
+ 
+
+def moser_de_bruijn_series(n):
+    if n<0:
+        raise NotImplementedError(
+            "Enter a valid input"
+        )
+    arr = []
+    for i in range(n):
+        arr.append(moser_de_bruijn(i))
+    return arr
+
+def golomb(n):
+    """
+    Return the n'th golomb number
+    Golomb sequence is a non-decreasing integer sequence where n-th term is equal to number of times n appears in the sequence.
+    
+    Parameters
+    ----------
+    n : int
+            denotes the count of golomb
+    """
+    if n < 0:
+        raise NotImplementedError(
+            "Enter a valid input"
+        )
+ 
+    if (n == 0 or n == 1):
+        return 1
+ 
+    return 1 + golomb(n -
+    golomb(golomb(n - 1)))
+
+
+def golomb_series(n):
+    """
+    Return first n golomb numbers
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of golomb numbers
+    return : array
+        return an array of integers
+    """
+    if n < 0:
+        raise NotImplementedError(
+            "Enter a valid input"
+        )
+    arr = []
+    for i in range(n):
+        arr.append(golomb(i))
+    return arr
+
+def newman_conway(n):
+    """
+    Return the n'th newman_conway number
+    
+    Parameters
+    ----------
+    n : int
+            denotes the count of newman_conway
+    """
+    if n < 0:
+        raise NotImplementedError(
+            "Enter a valid number"
+        )
+    elif (n == 0 or n == 1 or n == 2):
+        return 1
+    else:
+        return newman_conway(newman_conway(n-1)) + newman_conway(n-newman_conway(n-1))
+
+def newman_conway_series(n):
+    """
+    Return first n newman_conway number 
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of newman_conway numbers
+    return : array
+        return an array of integers
+    """
+    if n < 0:
+        raise NotImplementedError(
+            "Enter a valid number"
+        )
+    arr = []
+    for i in range(n):
+        arr.append(newman_conway(i))
+    return arr
+
+def dealnnoy(n, m):
+    """
+    Return dealmony
+    
+    Parameter
+    ---------
+    n = int
+    m = int
+    """
+    if n < 0 or m < 0:
+        raise NotImplementedError(
+            "Enter a valid number"
+        )
+     
+    if (m == 0 or n == 0) :
+        return 1
+ 
+    return dealnnoy(m - 1, n) + dealnnoy(m - 1, n - 1) + dealnnoy(m, n - 1)
+
+
+def entringer(n, k):
+    """
+    Return entringer
+
+    Entringer Number E(n, k) are the number of permutations of {1, 2, …, n + 1}, starting with k + 1, which, after initially falling, alternatively fall then rise.
+    
+    Parameter
+    ---------
+    n = int
+    m = int
+    """
+    dp = [[0 for x in range(k+1)]
+             for y in range(n+1)]
+
+    dp[0][0] = 1
+    for i in range(1, n+1):
+        dp[i][0] = 0
+    for i in range(1, n+1):
+        for j in range(1, k+1):
+            dp[i][j] = (dp[i][j - 1]
+                 + dp[i - 1][i - j])
+                         
+    return dp[n][k]
+
+
+
+
+
+
+
+
 #def newman_prime(n):
 #def newman_prime_series(n):
 #def lobb(n):
 #def lobb_series(n):
 #def eulerian(n):
 #def eulerian_series(n):
-#def delannoy(n):
 #def delannoy_series(n):
-#def entringer(n):
 #def entringer_series(n):
 #def recontres(n):
 #def recontres_series(n):
