@@ -8,6 +8,9 @@ def test_isPrime1():
 def test_isPrime2():
     assert isPrime(727) == True
 
+def test_isPrime3():
+    assert isPrime(7480398387) == False
+
 def test_prime_series1():
     assert prime_series(5) == [2,3,5,7,11]
 
@@ -19,6 +22,9 @@ def test_prime1():
 
 def test_prime2():
     assert prime(1000) == 7919
+
+def test_prime3():
+    assert prime(6543223) == 447519
 
 def test_prime_table():
     assert prime_table(8) == [3,7,31,211,2311,30031,510511,9699691]
