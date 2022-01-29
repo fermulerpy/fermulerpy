@@ -272,4 +272,3 @@ def prime_factorization(n):
     findFrequency(arr, count)
     return count
 
-print(prime(1000))
