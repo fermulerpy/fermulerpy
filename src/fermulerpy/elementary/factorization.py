@@ -271,4 +271,3 @@ def prime_factorization(n):
     count = {}
     findFrequency(arr, count)
     return count
-
