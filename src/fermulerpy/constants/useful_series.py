@@ -297,10 +297,79 @@ def nCkModp(n, k, p):
             Coef[j] = (Coef[j] + Coef[j-1]) % p 
     return Coef[k] 
 
-#def moser_de_bruijn(n):
-#def moser_de_bruijn_series(n):
-#def golomb(n):
-#def golomb_series(n):
+def moser_de_bruijn(n):
+    """
+    Returns the n'th moser_de_bruijn number
+
+    Parameters
+    ----------
+    n : int
+        denotes the number for which moser_de_bruijn number needs to be calculated
+
+    """
+    if n == 0:
+        return 0
+ 
+    elif n ==1:
+        return 1
+ 
+    elif n % 2 ==0:
+        return 4 * moser_de_bruijn(n // 2)
+ 
+    elif n % 2 == 1:
+        return 4 * moser_de_bruijn(n // 2) +1
+    
+def moser_de_bruijn_series(n):
+    """
+    Returns first n moser_de_bruijn numbers
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of moser_de_bruijn numbers
+    return : array
+        return an array of integers
+    """
+    arr = []
+    for i in range(n):
+        arr.append(moser_de_bruijn(i))
+    return arr
+
+def golomb(n):
+    """
+    Returns the n'th golomb number
+
+    Parameters
+    ----------
+    n : int
+        denotes the number for which golomb number needs to be calculated
+
+    """
+    if (n == 1):
+        return 1
+ 
+    return 1 + golomb(n -golomb(golomb(n - 1)))
+
+def golomb_series(n):
+    """
+    Returns first n golomb numbers
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of golomb numbers
+    return : array
+        return an array of integers
+    """
+    if(n<1):
+        raise ValueError(
+            "Invalid Input"
+        )
+    arr = []
+    for i in range(1,n+1):
+        arr.append(golomb(i))
+    return arr
+
 #def newman_conway(n):
 #def newman_conway_series(n):
 #def newman_prime(n):

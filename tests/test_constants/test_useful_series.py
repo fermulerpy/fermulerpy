@@ -1,6 +1,6 @@
 import pytest
 
-from fermulerpy.constants import ugly_number,ugly_series,fibonacci,fibonacci_series,catalan,catalan_series,factorial,stirling_factorial,bell_number,bell_series,binomialCoef,nCkModp
+from fermulerpy.constants import ugly_number,ugly_series,fibonacci,fibonacci_series,catalan,catalan_series,factorial,stirling_factorial,bell_number,bell_series,binomialCoef,nCkModp,moser_de_bruijn,moser_de_bruijn_series,golomb,golomb_series
 
 def test_ugly_number1():
     assert ugly_number(1) == 1
@@ -104,3 +104,43 @@ def test_nCkModp2():
     assert nCkModp(6,2,13) == 2
 def test_nCkModp3():
     assert nCkModp(10,6,5) == 0
+
+
+def test_moser_de_bruijn1():
+    assert moser_de_bruijn(1) == 1
+def test_moser_de_bruijn2():
+    assert moser_de_bruijn(8) == 64
+def test_moser_de_bruijn3():
+    assert moser_de_bruijn(25) == 321
+def test_moser_de_bruijn4():
+    assert moser_de_bruijn(40) == 1088
+
+
+def test_moser_de_bruijn_series1():
+    assert moser_de_bruijn_series(2) == [0,1]
+def test_moser_de_bruijn_series2():
+    assert moser_de_bruijn_series(3) == [0,1,4]
+def test_moser_de_bruijn_series3():
+    assert moser_de_bruijn_series(5) == [0,1,4,5,16]
+def test_moser_de_bruijn_series4():
+    assert moser_de_bruijn_series(9) == [0,1,4,5,16,17,20,21,64]
+
+
+def test_golomb1():
+    assert golomb(1) == 1
+def test_golomb2():
+    assert golomb(8) == 4
+def test_golomb3():
+    assert golomb(25) == 9
+def test_golomb4():
+    assert golomb(40) == 12
+
+
+def test_golomb_series1():
+    assert golomb_series(2) == [1,2]
+def test_golomb_series2():
+    assert golomb_series(3) == [1,2,2]
+def test_golomb_series3():
+    assert golomb_series(9) == [1,2,2,3,3,4,4,4,5]
+def test_golomb_series4():
+    assert golomb_series(11) == [1,2,2,3,3,4,4,4,5,5,5]

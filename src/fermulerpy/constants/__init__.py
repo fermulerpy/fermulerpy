@@ -11,6 +11,11 @@ from .useful_series import(
     bell_series,
     binomialCoef,
     nCkModp,
+    moser_de_bruijn,
+    moser_de_bruijn_series,
+    golomb,
+    golomb_series,
+
 )
 
 __all__ = [
@@ -26,4 +31,8 @@ __all__ = [
     "bell_series",
     "binomialCoef",
     "nCkModp",
+    "moser_de_bruijn",
+    "moser_de_bruijn_series",
+    "golomb",
+    "golomb_series",
 ]
