@@ -15,7 +15,10 @@ from .useful_series import(
     moser_de_bruijn_series,
     golomb,
     golomb_series,
-
+    newman_conway,
+    newman_conway_series,
+    newman_prime,
+    newman_prime_series,
 )
 
 __all__ = [
@@ -35,4 +38,8 @@ __all__ = [
     "moser_de_bruijn_series",
     "golomb",
     "golomb_series",
+    "newman_conway",
+    "newman_conway_series",
+    "newman_prime",
+    "newman_prime_series",
 ]

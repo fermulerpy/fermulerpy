@@ -307,17 +307,14 @@ def moser_de_bruijn(n):
         denotes the number for which moser_de_bruijn number needs to be calculated
 
     """
-    if n == 0:
-        return 0
- 
-    elif n ==1:
-        return 1
- 
-    elif n % 2 ==0:
-        return 4 * moser_de_bruijn(n // 2)
- 
-    elif n % 2 == 1:
-        return 4 * moser_de_bruijn(n // 2) +1
+    S = [0, 1]
+    for i in range(2, n+1):
+        if i % 2 == 0:
+            S.append(4 * S[int(i / 2)])
+        else:
+            S.append(4 * S[int(i / 2)] + 1)
+    z = S[n]
+    return z
     
 def moser_de_bruijn_series(n):
     """
@@ -345,10 +342,12 @@ def golomb(n):
         denotes the number for which golomb number needs to be calculated
 
     """
-    if (n == 1):
-        return 1
- 
-    return 1 + golomb(n -golomb(golomb(n - 1)))
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    for i in range(2, n+1):
+        dp[i] = 1 + dp[i - dp[dp[i - 1]]] 
+    z = dp[n]
+    return z
 
 def golomb_series(n):
     """
@@ -370,10 +369,77 @@ def golomb_series(n):
         arr.append(golomb(i))
     return arr
 
-#def newman_conway(n):
-#def newman_conway_series(n):
-#def newman_prime(n):
-#def newman_prime_series(n):
+
+def newman_conway(n):
+    """
+    Returns the n'th newman_conway number
+
+    Parameters
+    ----------
+    n : int
+        denotes the number for which newman_conway number needs to be calculated
+
+    """
+    f = [0, 1, 1]
+    for i in range(3, n + 1):
+        r = f[f[i-1]]+f[i-f[i-1]]
+        f.append(r);
+    return f[n]
+    
+def newman_conway_series(n):
+    """
+    Returns first n newman_conway numbers
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of newman_conway numbers
+    return : array
+        return an array of integers
+    """
+    if(n<1):
+        raise ValueError(
+            "Invalid Input"
+        )
+    arr = []
+    for i in range(1,n+1):
+        arr.append(newman_conway(i))
+    return arr
+
+def newman_prime(n):
+    """
+    Returns the n'th newman_prime number
+
+    Parameters
+    ----------
+    n : int
+        denotes the number for which newman_prime number needs to be calculated
+
+    """
+    if(n<2): return 1
+    a,b=1,1
+    for i in range(2,n+1):
+        c=2*b+a
+        a=b
+        b=c
+    return b
+
+def newman_prime_series(n):
+    """
+    Returns first n newman_conway numbers
+
+    Parameters
+    ----------
+    n : int
+        denotes the count of newman_conway numbers
+    return : array
+        return an array of integers
+    """
+    arr = []
+    for i in range (n):
+        arr.append(newman_prime(i))
+    return arr
+
 #def lobb(n):
 #def lobb_series(n):
 #def eulerian(n):

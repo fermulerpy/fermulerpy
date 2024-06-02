@@ -1,6 +1,7 @@
 import pytest
 
-from fermulerpy.constants import ugly_number,ugly_series,fibonacci,fibonacci_series,catalan,catalan_series,factorial,stirling_factorial,bell_number,bell_series,binomialCoef,nCkModp,moser_de_bruijn,moser_de_bruijn_series,golomb,golomb_series
+from fermulerpy.constants import ugly_number,ugly_series,fibonacci,fibonacci_series,catalan,catalan_series,factorial,stirling_factorial,bell_number,bell_series,binomialCoef,nCkModp,moser_de_bruijn,moser_de_bruijn_series,golomb,golomb_series,newman_conway,newman_conway_series,newman_prime,newman_prime_series
+ 
 
 def test_ugly_number1():
     assert ugly_number(1) == 1
@@ -144,3 +145,41 @@ def test_golomb_series3():
     assert golomb_series(9) == [1,2,2,3,3,4,4,4,5]
 def test_golomb_series4():
     assert golomb_series(11) == [1,2,2,3,3,4,4,4,5,5,5]
+
+
+def test_newman_conway1():
+    assert newman_conway(1) == 1
+def test_newman_conway2():
+    assert newman_conway(9) == 5
+def test_newman_conway3():
+    assert newman_conway(25) == 15
+def test_newman_conway4():
+    assert newman_conway(30) == 16
+
+
+def test_newman_conway_series1():
+    assert newman_conway_series(2) == [1,1]
+def test_newman_conway_series2():
+    assert newman_conway_series(3) == [1,1,2]
+def test_newman_conway_series3():
+    assert newman_conway_series(11) == [1,1,2,2,3,4,4,4,5,6,7]
+def test_newman_conway_series4():
+    assert newman_conway_series(15) == [1,1,2,2,3,4,4,4,5,6,7,7,8,8,8]
+
+
+def test_newman_prime1():
+    assert newman_prime(1) == 1
+def test_newman_prime2():
+    assert newman_prime(8) == 577
+def test_newman_prime3():
+    assert newman_prime(25) == 1855077841
+
+
+def test_newman_prime_series1():
+    assert newman_prime_series(2) == [1,1]
+def test_newman_prime_series2():
+    assert newman_prime_series(3) == [1,1,3]
+def test_newman_prime_series3():
+    assert newman_prime_series(10) == [1,1,3,7,17,41,99,239,577,1393]
+def test_newman_prime_series4():
+    assert newman_prime_series(15) == [1,1,3,7,17,41,99,239,577,1393,3363,8119,19601,47321,114243]
