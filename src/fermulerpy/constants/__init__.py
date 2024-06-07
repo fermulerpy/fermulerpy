@@ -19,6 +19,13 @@ from .useful_series import(
     newman_conway_series,
     newman_prime,
     newman_prime_series,
+    lobb,
+    eulerian,
+    delannoy,
+    entringer,
+    recontres,
+    jacobsthal,
+    jacobsthal_series,
 )
 
 __all__ = [
@@ -42,4 +49,11 @@ __all__ = [
     "newman_conway_series",
     "newman_prime",
     "newman_prime_series",
+    "lobb",
+    "eulerian",
+    "delannoy",
+    "entringer",
+    "recontres",
+    "jacobsthal",
+    "jacobsthal_series",
 ]
