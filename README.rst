@@ -1,4 +1,8 @@
+.. figure:: https://raw.githubusercontent.com/fermulerpy/LOGO/master/logo0.png
+   :alt: fermulerpy logo0
+   
 .. fermulerpy
+
 
 
 
